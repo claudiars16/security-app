@@ -3,9 +3,11 @@ import { Link, withRouter } from 'react-router-dom';
 import { compose } from 'recompose';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
-
+import FormInput from '../form-input/form-input.component'
+import CustomButton from '../custom-button/custom-button.component'
+import './sign-up.styles.scss';
 const SignUpPage = () => (
-  <div>
+  <div className="sign-in-and-sign-up">
     <h1>SignUp</h1>
     <SignUpForm />
   </div>
@@ -74,48 +76,53 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-        <input
+      <div className='sign-up'>
+         <h2 className='title'>No tengo una cuenta</h2>
+         <span>Registrate con tu email y constrasenia</span>
+         <form className='sign-up-form' onSubmit={this.onSubmit}>
+        <FormInput
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
-          placeholder="Full Name"
+          placeholder="Nombres Completos"
         />
-        <input
+        <FormInput
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
-          placeholder="Email Address"
+          placeholder="Email"
         />
-        <input
+        <FormInput
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <input
+        <FormInput
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">
-          Sign Up
-        </button>
+        <CustomButton disabled={isInvalid} type="submit">
+          Registrarse
+        </CustomButton>
 
         {error && <p>{error.message}</p>}
       </form>
+      </div>
+     
     );
   }
 }
 
 const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+   No tienes una cuenta? <Link to={ROUTES.SIGN_UP}>REGISTRARSE</Link>
   </p>
 );
 const SignUpForm = withRouter(withFirebase(SignUpFormBase));
