@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import Quiz from './Quiz';
 import Modal from './Modal';
 import Results from './Result';
-import shuffleQuestions from '../helpers/shuflleQuestions';
-import QUESTION_DATA from '../data/quiz-data';
+import shuffleQuestions from '../../helpers/shuflleQuestions';
+import QUESTION_DATA from '../../data/quiz-data';
+import { withAuthorization } from '../Session';
 
 class QuizApp extends Component {
   state = {
-    ...this.getInitialState(this.props.totalQuestions)
+    ...this.getInitialState(this.props.location.state.totalQuestions)
   };
 
   static propTypes = {
@@ -173,5 +174,5 @@ class QuizApp extends Component {
     );
   }
 }
-
-export default QuizApp;
+const condition = authUser => !!authUser;
+export default withAuthorization(condition)(QuizApp);
