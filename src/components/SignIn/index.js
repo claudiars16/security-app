@@ -67,7 +67,7 @@ class SignInFormBase extends Component {
         />
         <FormInput
           name="password"
-          value={password}
+          va  lue={password}
           onChange={this.onChange}
           type="password"
           placeholder="Password"

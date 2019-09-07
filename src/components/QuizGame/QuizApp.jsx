@@ -144,7 +144,7 @@ class QuizApp extends Component {
 
   restartQuiz = () => {
     this.setState({
-      ...this.getInitialState(this.props.totalQuestions)
+      ...this.getInitialState(this.props.location.state.totalQuestions)
     });
   };
 
