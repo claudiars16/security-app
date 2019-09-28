@@ -1,6 +1,8 @@
+@import '~antd/dist/antd.css';
 * {
   box-sizing: border-box;
 }
+
 
 html, body, #app, div[data-reactroot] {
   height: 100%;
@@ -8,18 +10,25 @@ html, body, #app, div[data-reactroot] {
 
 body {
   width: 100%;
+  height: 100%;
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 9px;
-  background: rgb(249,219,61);
-  color: #222;
+  background:url("./assets/logo.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  mix-blend-mode: soft-light;
+  /* background: rgb(249,219,61); */
   margin: 0;
   padding: 0;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 h1 {
   font-weight: normal;
   font-size: 2.25em;
+  color:#fff;
   text-transform: uppercase;
   letter-spacing: -1px;
   text-align: center;
@@ -28,6 +37,7 @@ h1 {
 h2 {
   font-size: 1.25em;
   margin: 0 0 15px;
+  color:#fff;
 }
 
 header {
@@ -73,10 +83,12 @@ code {
 .score, .question-number {
   font-size: 4em;
   font-weight: 100;
+  color:#fff;
 }
 
 .description {
   font-size: 1.5em;
+  color:#fff;
 }
 
 .questions {
@@ -91,6 +103,7 @@ code {
 .question-answers {
   margin-top: .75em;
   padding-left: 1.2em;
+  color:#fff;
 }
 
 .question-answer {
@@ -192,7 +205,7 @@ code {
   background: rgb(252, 235, 148);
   padding: 5%;
   will-change: transform;
-  transform: scale(4);
+  transform: scale(3);
   z-index: 2;
   opacity: 1;
   flex-direction: column;

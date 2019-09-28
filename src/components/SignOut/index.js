@@ -1,8 +1,9 @@
 import React from 'react';
 import { withFirebase } from '../Firebase';
+import CustomButton from '../custom-button/custom-button.component'
 const SignOutButton = ({ firebase }) => (
-  <button type="button" onClick={firebase.doSignOut}>
-    Sign Out
-  </button>
+  <CustomButton onClick={firebase.doSignOut}>
+    Salir
+  </CustomButton>
 );
 export default withFirebase(SignOutButton);

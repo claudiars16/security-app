@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import CustomButton from '../custom-button/custom-button.component'
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
@@ -56,9 +56,9 @@ class PasswordForgetFormBase extends Component {
           type="text"
           placeholder="Email Address"
         />
-        <button disabled={isInvalid} type="submit">
+        <CustomButton disabled={isInvalid} type="submit">
           Reset My Password
-        </button>
+        </CustomButton>
 
         {error && <p>{error.message}</p>}
       </form>
